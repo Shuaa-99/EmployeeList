@@ -1,0 +1,22 @@
+.person {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+
+  img {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  h4 {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+
+  p {
+    margin: 0.2rem 0;
+  }
+}
