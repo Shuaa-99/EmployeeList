@@ -42,7 +42,8 @@ const Home = () => {
               image={item.image}
             />
           );
-        })}
+        }
+        )}
 
         <div className="btns">
           <button onClick={goBack}>Prev</button>
