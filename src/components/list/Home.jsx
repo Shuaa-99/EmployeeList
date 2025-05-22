@@ -8,6 +8,9 @@ const Home = () => {
 
   const showPeople = data.slice(index, index + 6);
 
+  const isFirstPage = index === 0;
+  const isLastPage = index + 6 >= data.length;
+
   const goNext = () => {
     if (index + 6 >= data.length) {
       setIndex(0);
@@ -27,7 +30,6 @@ const Home = () => {
   return (
     <div>
       <div className="container">
-        
         <h3>
           Employee from {index + 1} to {index + showPeople.length}
         </h3>
@@ -42,16 +44,26 @@ const Home = () => {
               image={item.image}
             />
           );
-        }
-        )}
+        })}
 
         <div className="btns">
-          <button onClick={goBack}>Prev</button>
-          <button onClick={goNext}>Next</button>
+          <button
+            onClick={goBack}
+            disabled={isFirstPage}
+            className={`nav-button ${isFirstPage ? "disabled" : ""}`}
+          >
+            Prev
+          </button>
+
+          <button
+            onClick={goNext}
+            disabled={isLastPage}
+            className={`nav-button ${isLastPage ? "disabled" : ""}`}
+          >
+            Next
+          </button>
         </div>
-      
       </div>
-   
     </div>
   );
 };
